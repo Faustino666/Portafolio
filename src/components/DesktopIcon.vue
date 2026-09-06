@@ -16,7 +16,16 @@ const selected = ref(false)
     @click="selected = !selected"
     @dblclick="emit('open')"
   >
-    <AppIcon :name="icon" class="xp-desktop-icon-img" />
+    <span class="xp-icon-wrap">
+      <AppIcon :name="icon" class="xp-desktop-icon-img" />
+      <span class="xp-shortcut" aria-hidden="true" title="Acceso directo">
+        <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="10" height="10" rx="1" fill="#1D5BBA" />
+          <path d="M7.6 3.6 3.6 7.6l.8.8 4-4" fill="none" stroke="#fff" stroke-width="1.5" />
+          <path d="M5 4h3v3" fill="none" stroke="#fff" stroke-width="1.5" />
+        </svg>
+      </span>
+    </span>
     <span class="xp-desktop-icon-label">{{ label }}</span>
   </button>
 </template>
@@ -40,10 +49,30 @@ const selected = ref(false)
   outline-offset: -2px;
 }
 
+.xp-icon-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .xp-desktop-icon-img {
   width: 40px;
   height: 40px;
   filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.45));
+}
+
+.xp-shortcut {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 13px;
+  height: 13px;
+}
+
+.xp-shortcut svg {
+  width: 13px;
+  height: 13px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
 }
 
 .xp-desktop-icon:hover .xp-desktop-icon-img {
