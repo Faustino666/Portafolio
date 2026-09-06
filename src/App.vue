@@ -134,23 +134,116 @@ const taskbarWindows = computed(() =>
 )
 
 onMounted(() => open('about'))
+
+const iconsBox = ref<HTMLElement | null>(null)
+const selectedIds = ref<string[]>([])
+
+function selectOnly(id: string, e?: MouseEvent) {
+  if (e && (e.ctrlKey || e.metaKey)) {
+    selectedIds.value = selectedIds.value.includes(id)
+      ? selectedIds.value.filter((x) => x !== id)
+      : [...selectedIds.value, id]
+    return
+  }
+  selectedIds.value = [id]
+}
+
+const band = reactive({ show: false, x1: 0, y1: 0, x2: 0, y2: 0 })
+let bandDrag = false
+
+function onDesktopMouseDown(e: MouseEvent) {
+  if (e.button !== 0) return
+  if ((e.target as HTMLElement).closest('.xp-desktop-icon,.xp-window,.xp-taskbar')) return
+  bandDrag = true
+  band.show = true
+  band.x1 = band.x2 = e.clientX
+  band.y1 = band.y2 = e.clientY
+  e.preventDefault()
+  window.addEventListener('mousemove', onDesktopMouseMove)
+  window.addEventListener('mouseup', onDesktopMouseUp)
+}
+
+function bandRect() {
+  return {
+    left: Math.min(band.x1, band.x2),
+    top: Math.min(band.y1, band.y2),
+    right: Math.max(band.x1, band.x2),
+    bottom: Math.max(band.y1, band.y2),
+  }
+}
+
+function onDesktopMouseMove(e: MouseEvent) {
+  if (!bandDrag) return
+  band.x2 = e.clientX
+  band.y2 = e.clientY
+  const r = bandRect()
+  const hits: string[] = []
+  if (iconsBox.value) {
+    iconsBox.value.querySelectorAll('.xp-desktop-icon').forEach((el) => {
+      const er = (el as HTMLElement).getBoundingClientRect()
+      if (r.left < er.right && r.right > er.left && r.top < er.bottom && r.bottom > er.top) {
+        hits.push((el as HTMLElement).dataset.id!)
+      }
+    })
+  }
+  selectedIds.value = hits
+}
+
+function onDesktopMouseUp() {
+  bandDrag = false
+  window.removeEventListener('mousemove', onDesktopMouseMove)
+  window.removeEventListener('mouseup', onDesktopMouseUp)
+  if (Math.abs(band.x2 - band.x1) < 3 && Math.abs(band.y2 - band.y1) < 3) {
+    selectedIds.value = []
+  }
+  band.show = false
+}
 </script>
 
 <template>
   <div
     class="relative h-screen w-screen select-none overflow-hidden bg-cover bg-center"
     style="background-image: url('/wallpaper-bliss.jpg')"
+    @mousedown="onDesktopMouseDown"
   >
-    <div class="absolute left-2 top-2 z-0 flex h-[calc(100vh-50px)] flex-col flex-wrap content-start items-start gap-2">
+    <div ref="iconsBox" class="absolute left-2 top-2 z-0 flex h-[calc(100vh-50px)] flex-col flex-wrap content-start items-start gap-2">
+      <DesktopIcon
+        id="recycle"
+        label="Papelera de reciclaje"
+        icon="recycle"
+        :shortcut="false"
+        :selected="selectedIds.includes('recycle')"
+        @select="selectOnly('recycle', $event)"
+      />
       <DesktopIcon
         v-for="app in apps"
         :key="app.id"
+        :id="app.id"
         :label="app.label"
         :icon="app.icon"
+        :selected="selectedIds.includes(app.id)"
+        @select="selectOnly(app.id, $event)"
         @open="open(app.id)"
       />
-      <DesktopIcon label="Papelera de reciclaje" icon="recycle" :shortcut="false" />
+      <DesktopIcon
+        id="bonzi"
+        label="Bonzi Buddy"
+        icon="bonzi"
+        :selected="selectedIds.includes('bonzi')"
+        @select="selectOnly('bonzi', $event)"
+      />
     </div>
+
+    <div
+      v-show="band.show"
+      class="xp-marquee"
+      :style="{
+        left: Math.min(band.x1, band.x2) + 'px',
+        top: Math.min(band.y1, band.y2) + 'px',
+        width: Math.abs(band.x2 - band.x1) + 'px',
+        height: Math.abs(band.y2 - band.y1) + 'px',
+      }"
+    />
 
     <div class="pointer-events-none absolute inset-0 z-10">
       <template v-for="win in instances" :key="win.id">
@@ -176,3 +269,14 @@ onMounted(() => open('about'))
     <Taskbar :windows="taskbarWindows" @task-click="taskClick" />
   </div>
 </template>
+
+<style scoped>
+.xp-marquee {
+  position: absolute;
+  z-index: 5;
+  background: rgba(49, 106, 197, 0.3);
+  border: 1px solid #0050ef;
+  outline: 1px solid rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+</style>

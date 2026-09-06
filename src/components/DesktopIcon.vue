@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import AppIcon from './xp/AppIcon.vue'
 
-withDefaults(defineProps<{ label: string; icon: string; shortcut?: boolean }>(), {
-  shortcut: true,
-})
-const emit = defineEmits<{ open: [] }>()
+withDefaults(
+  defineProps<{ id: string; label: string; icon: string; selected?: boolean; shortcut?: boolean }>(),
+  { selected: false, shortcut: true }
+)
+const emit = defineEmits<{ select: [e: MouseEvent]; open: [] }>()
 
-const selected = ref(false)
+function emitSelect(e: MouseEvent) {
+  emit('select', e)
+}
 </script>
 
 <template>
   <button
     type="button"
     class="xp-desktop-icon"
+    :data-id="id"
     :class="{ 'is-selected': selected }"
-    @click="selected = !selected"
+    @click="emitSelect"
     @dblclick="emit('open')"
   >
     <span class="xp-icon-wrap">
