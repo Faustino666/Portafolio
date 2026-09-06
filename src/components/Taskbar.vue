@@ -38,8 +38,6 @@ onBeforeUnmount(() => clearInterval(timer))
 
     <div class="xp-separator" aria-hidden="true" />
 
-    <div class="xp-separator" aria-hidden="true" />
-
     <div class="xp-taskbuttons">
       <button
         v-for="win in windows"
