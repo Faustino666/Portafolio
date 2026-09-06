@@ -15,6 +15,11 @@ function socialLabel(key: 'discord' | 'spotify' | 'youtube'): string {
       </div>
       <hr class="xp-rule !my-2" />
       <div>
+        <div class="xp-muted text-[11px]">Teléfono</div>
+        <a class="xp-link" :href="`tel:${profile.phone}`">{{ profile.phone }}</a>
+      </div>
+      <hr class="xp-rule !my-2" />
+      <div>
         <div class="xp-muted text-[11px]">GitHub</div>
         <a class="xp-link" :href="profile.github" target="_blank" rel="noopener noreferrer">
           {{ profile.github }}

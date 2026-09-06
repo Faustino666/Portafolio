@@ -1,7 +1,7 @@
 export interface ExperienceItem {
   company: string
   role: string
-  period: string
+  period?: string
   location?: string
   achievements: string[]
 }
@@ -34,11 +34,13 @@ export interface EducationItem {
 const ICON = (path: string): string => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}`
 
 export const profile = {
-  name: 'Faustino',
+  name: 'Cristofer Sachiel Faustino Muñoz Avila',
   role: 'Desarrollador de Software',
-  tagline: 'Desarrollo web moderno, aplicaciones móviles y sistemas interactivos.',
-  location: '[Tu ciudad, País]',
-  email: 'tu-email@ejemplo.com',
+  tagline:
+    'Especialista en desarrollo de software con experiencia en el diseño e implementación de aplicaciones.',
+  location: 'Loreto, Zacatecas, México',
+  email: 'munozavilafaustino@gmail.com',
+  phone: '496-961-5463',
   github: 'https://github.com/Faustino666',
   githubUser: 'Faustino666',
   socials: {
@@ -46,8 +48,8 @@ export const profile = {
     spotify: '',
     youtube: '',
   },
-  cvUrl: '/cv-faustino.pdf',
-  bio: 'Soy un desarrollador de software apasionado por crear soluciones innovadoras y funcionales que aportan valor a las personas y organizaciones. Disfruto asumir nuevos retos, aprender continuamente y convertir ideas en aplicaciones eficientes, con un fuerte enfoque en la calidad, la mejora continua y la resolución de problemas a través de la tecnología.',
+  cvUrl: '/cv-cristofer.pdf',
+  bio: 'Especialista en desarrollo de software con experiencia en el diseño e implementación de aplicaciones. Destaco por mi dominio de diversos lenguajes de programación y tecnologías y mi capacidad de crear soluciones eficientes y escalables. Deseo contribuir a una empresa dinámica y en expansión.',
 }
 
 export const skills: SkillCategory[] = [
@@ -118,24 +120,36 @@ export const skills: SkillCategory[] = [
 
 export const experience: ExperienceItem[] = [
   {
-    company: '[Nombre de la empresa]',
-    role: '[Tu cargo]',
-    period: 'Mes AAAA — Actualidad',
-    location: '[Ciudad]',
+    company: 'TecNM Campus Loreto',
+    role: 'Desarrollo Web — Biblioteca del TecNM',
+    location: 'Loreto, Zacatecas',
     achievements: [
-      'Logro o responsabilidad principal en proyectos destacados.',
-      'Otro logro relevante con impacto medible.',
-      'Detalle de tecnologías y metodologías utilizadas.',
+      'Diseñé y desarrollé la interfaz web para la biblioteca institucional del TecNM Campus Loreto.',
+      'Programé la estructura y estilos utilizando HTML y CSS.',
+      'Implementé un diseño visual enfocado en accesibilidad y facilidad de navegación para estudiantes y docentes.',
+      'Colaboré en la organización y presentación de contenido digital institucional.',
     ],
   },
   {
-    company: '[Empresa anterior]',
-    role: '[Tu cargo anterior]',
-    period: 'Mes AAAA — Mes AAAA',
-    location: '[Ciudad]',
+    company: 'NextByte',
+    role: 'Técnico en Soporte y Tecnologías',
+    location: 'Loreto, Zacatecas',
     achievements: [
-      'Contribución clave en un proyecto o producto.',
-      'Mejora de procesos o rendimiento implementada.',
+      'Brindé soporte técnico y mantenimiento a equipos y sistemas informáticos.',
+      'Diagnostiqué y solucioné problemas de hardware y software.',
+      'Apoyé en tareas de instalación, configuración y optimización de equipos tecnológicos.',
+      'Trabajé en entornos de atención técnica y resolución de incidencias.',
+    ],
+  },
+  {
+    company: 'Protección Civil',
+    role: 'Desarrollador de Software',
+    location: 'Loreto, Zacatecas',
+    achievements: [
+      'Participé en el desarrollo de un sistema orientado a la gestión y apoyo operativo para Protección Civil.',
+      'Colaboré en el diseño y programación de funcionalidades del software.',
+      'Apoyé en la organización de información y automatización de procesos.',
+      'Trabajé en equipo aplicando metodologías de desarrollo y resolución de problemas.',
     ],
   },
 ]
@@ -169,13 +183,13 @@ export const projects: Project[] = [
 
 export const education: EducationItem[] = [
   {
-    title: '[Título / Ingeniería en sistemas]',
-    institution: '[Universidad / Institución]',
-    period: 'AAAA — AAAA',
+    title: 'Ingeniería en Sistemas Computacionales: Desarrollo de Software',
+    institution: 'TecNM Campus Loreto',
+    period: '2022 — 2026',
   },
   {
-    title: 'Certificación / Curso de [Tecnología]',
-    institution: '[Plataforma educativa]',
-    period: 'AAAA',
+    title: 'Técnico en Programación: Programador',
+    institution: 'CBTis 215',
+    period: '2019 — 2022',
   },
 ]

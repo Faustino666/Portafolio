@@ -10,7 +10,7 @@ import { experience } from '../../data/portfolioData'
           <span class="font-bold text-[#00267f]">{{ item.role }}</span>
           <span class="xp-muted"> · {{ item.company }}</span>
         </div>
-        <span class="xp-period">{{ item.period }}</span>
+        <span v-if="item.period" class="xp-period">{{ item.period }}</span>
       </div>
       <div v-if="item.location" class="xp-muted text-[11px]">{{ item.location }}</div>
       <ul class="mt-2 list-disc space-y-1 pl-5">
