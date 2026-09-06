@@ -149,6 +149,7 @@ onMounted(() => open('about'))
         :icon="app.icon"
         @open="open(app.id)"
       />
+      <DesktopIcon label="Papelera de reciclaje" icon="recycle" :shortcut="false" />
     </div>
 
     <div class="pointer-events-none absolute inset-0 z-10">

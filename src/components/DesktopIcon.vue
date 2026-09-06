@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import AppIcon from './xp/AppIcon.vue'
 
-defineProps<{ label: string; icon: string }>()
+withDefaults(defineProps<{ label: string; icon: string; shortcut?: boolean }>(), {
+  shortcut: true,
+})
 const emit = defineEmits<{ open: [] }>()
 
 const selected = ref(false)
@@ -18,7 +20,7 @@ const selected = ref(false)
   >
     <span class="xp-icon-wrap">
       <AppIcon :name="icon" class="xp-desktop-icon-img" />
-      <span class="xp-shortcut" aria-hidden="true" title="Acceso directo">
+      <span class="xp-shortcut" v-if="shortcut" aria-hidden="true" title="Acceso directo">
         <svg viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#7e7b98"
