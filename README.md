@@ -1,158 +1,61 @@
-<h1 data-importer="text" align="left">About me👋</h1>
+# 🖥️ Portafolio estilo Windows XP
 
-<p data-importer="text" align="left">💻 Software Developer | Building Modern Web Experiences, Mobile Applications, and Interactive Systems 🚀</p>
+Portafolio web interactivo con la estética de **Windows XP**, construido con **Vue 3 + Vite + TypeScript**. El escritorio funciona como un sistema operativo: iconos, ventanas arrastrables, barra de tareas y menú Inicio.
 
-###
+## ✨ Características
 
-<p data-importer="text" align="left">I am a software developer passionate about creating innovative and functional solutions that deliver value to people and organizations. I enjoy taking on new challenges, continuously learning, and turning ideas into efficient applications, with a strong focus on quality, continuous improvement, and problem-solving through technology.</p>
+- **Escritorio XP** con fondo *Bliss*, iconos auténticos de Windows XP y selección múltiple estilo XP (arrastra un rectángulo sobre los iconos).
+- **Iconos funcionales**: doble clic abre las ventanas de Sobre mí, Experiencia, Proyectos, Habilidades, Formación y Contacto.
+- **Ventanas al estilo XP**: arrastrables, minimizar/maximizar/cerrar, con barra de tareas que muestra las ventanas abiertas.
+- **Menú Inicio funcional**: abre las aplicaciones del portafolio, con iconos originales de Windows XP y botones *Cerrar sesión* y *Apagar equipo*.
+- **Proyectos reales**: enlazados a los repositorios de GitHub de Faustino666.
+- **CV descargable** (`/cv-cristofer.pdf`) desde la ventana de Contacto.
+- Favicon con el logo ondulado de Windows XP.
 
-##
+## 🛠️ Stack
 
-<div data-importer="techs" align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="55" alt="javascript logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="55" alt="typescript logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="55" alt="css logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="55" alt="vscode logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="55" alt="html5 logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="55" alt="git logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="55" alt="github logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="55" alt="tailwindcss logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="55" alt="react logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" height="55" alt="androidstudio logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="55" alt="java logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="55" alt="mysql logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="55" alt="vuejs logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="55" alt="nodejs logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="55" alt="arduino logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="55" alt="django logo"  />
-  <img width="13" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="55" alt="python logo"  />
-</div>
+| Área       | Tecnología                                        |
+| ---------- | ------------------------------------------------- |
+| Framework  | Vue 3 (Composition API, `<script setup>`)         |
+| Lenguaje   | TypeScript                                        |
+| Build      | Vite                                              |
+| Estilos    | Tailwind CSS + CSS nativo (paleta Luna de Windows XP) |
 
-## 🖥️ Frontend
+## 🚀 Puesta en marcha
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="45" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="45" alt="css logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="45" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="45" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="45" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="45" alt="vuejs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="45" alt="tailwindcss logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="45" alt="nextjs logo"  />
-</div>
+Requisito: Node.js `^22.18.0 || >=24.12.0` y `pnpm`.
 
-## ⚙️ Backend
+```bash
+pnpm install     # instalar dependencias
+pnpm dev         # servidor de desarrollo
+pnpm build       # type-check + build de producción
+pnpm preview     # previsualizar el build
+```
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="45" alt="nodejs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="45" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="45" alt="django logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="45" alt="java logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="45" alt="php logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" height="45" alt="express logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" height="45" alt="fastapi logo"  />
-</div>
+El build genera la salida en `dist/`.
 
-## 🗄️ Database
+## 📁 Estructura
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="45" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="45" alt="postgresql logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="45" alt="mongodb logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="45" alt="sqlite logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" height="45" alt="supabase logo"  />
-</div>
+```
+public/icons/            # Iconos de Windows XP
+src/
+├── components/
+│   ├── windows/         # Contenido de cada ventana (Sobre mí, Contacto, …)
+│   ├── xp/              # Reproducciones (Ventana, AppIcon)
+│   ├── DesktopIcon.vue  # Icono del escritorio
+│   ├── Taskbar.vue      # Barra de tareas
+│   └── StartMenu.vue    # Menú Inicio
+├── data/
+│   └── portfolioData.ts # Datos del perfil, experiencia, proyectos…
+└── assets/              # Estilos base y paleta XP
+```
 
-## ☁️ Cloud
+## 📝 Datos
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" height="45" alt="aws logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="45" alt="google cloud logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" height="45" alt="firebase logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" height="45" alt="vercel logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" height="45" alt="netlify logo"  />
-</div>
+Toda la información personal (perfil, experiencia, formación, proyectos y contacto) está centralizada en `src/data/portfolioData.ts`. Edita ese archivo para actualizar el contenido del portafolio.
 
-## 🛠️ Tools
+## 🙏 Créditos
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="45" alt="git logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="45" alt="vscode logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" height="45" alt="androidstudio logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="45" alt="arduino logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" height="45" alt="postman logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="45" alt="npm logo"  />
-</div>
-
-## 🚀 Platforms
-
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="45" alt="github logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="45" alt="docker logo"  />
-</div>
-
-## 
-
-<img data-importer="image" align="right" height="300" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGhkZ2V0d2s0b3NrcHNvbWtuNXhvcGJlcHk2bnE0NG13eDNocGRqNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cjG98gMyj574A/giphy.gif"  />
-
-![Alt text](https://spotify-recently-played-readme.vercel.app/api?user=31bqo7yzkaosfgvr4ibitacvigru&unique={true|1|on|yes}) 
-
-##
-
-<div data-importer="socials" align="center">
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/spotify/default.svg" width="52" height="40" alt="spotify logo"  />
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" width="52" height="40" alt="youtube logo"  />
-</div>
-
-##
-###
-
-<div data-importer="profile-views" align="center">
-  <img data-importer="profile-views" src="https://visitor-badge.laobi.icu/badge?page_id=Faustino666.Faustino666&"  />
-</div>
-
-###
+- Iconos originales de Windows XP: [holylance98/WinXpIcons](https://github.com/holylance98/WinXpIcons)
+- Logo del botón Inicio (fluir Windows XP): [rw-designer](https://www.rw-designer.com/icon-detail/18835)
+- Fondo *Bliss* incluido en `public/wallpaper-bliss.jpg`
