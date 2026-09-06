@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
+import AppIcon from './xp/AppIcon.vue'
+
+interface TaskbarWindow {
+  id: string
+  title: string
+  icon: string
+  minimized: boolean
+  active: boolean
+}
+
+defineProps<{ windows: TaskbarWindow[] }>()
+const emit = defineEmits<{ 'task-click': [id: string] }>()
 
 const now = ref(new Date())
 
@@ -21,22 +33,10 @@ onBeforeUnmount(() => clearInterval(timer))
   <div class="xp-taskbar">
     <button class="xp-start" type="button">
       <svg class="xp-start-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path
-          d="M2 5c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V5Z"
-          fill="#8FD14F"
-        />
-        <path
-          d="M2 9c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V9Z"
-          fill="#52BE38"
-        />
-        <path
-          d="M2 13c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V13Z"
-          fill="#52BE38"
-        />
-        <path
-          d="M2 17c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V17Z"
-          fill="#52BE38"
-        />
+        <path d="M2 5c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V5Z" fill="#8FD14F" />
+        <path d="M2 9c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V9Z" fill="#52BE38" />
+        <path d="M2 13c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V13Z" fill="#52BE38" />
+        <path d="M2 17c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V17Z" fill="#52BE38" />
         <circle cx="6.5" cy="6.5" r="2.5" fill="#F7D117" />
       </svg>
       <span>Inicio</span>
@@ -66,6 +66,23 @@ onBeforeUnmount(() => clearInterval(timer))
           <path d="M2.5 5.5h6l2 2.5h11v9.5a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V5.5Z" fill="#FCD54B" stroke="#C9971C" stroke-width="1.3" />
           <path d="M2.5 8.5h19" stroke="#EAF2FB" stroke-width="1.6" opacity="0.9" />
         </svg>
+      </button>
+    </div>
+
+    <div class="xp-separator" aria-hidden="true" />
+
+    <div class="xp-taskbuttons">
+      <button
+        v-for="win in windows"
+        :key="win.id"
+        type="button"
+        class="xp-task-btn"
+        :class="{ 'is-active': win.active, 'is-minimized': win.minimized }"
+        :title="win.title"
+        @click="emit('task-click', win.id)"
+      >
+        <AppIcon :name="win.icon" />
+        <span>{{ win.title }}</span>
       </button>
     </div>
 
@@ -134,6 +151,7 @@ onBeforeUnmount(() => clearInterval(timer))
   width: 2px;
   height: 20px;
   margin-left: 6px;
+  flex-shrink: 0;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.35));
 }
 
@@ -143,6 +161,7 @@ onBeforeUnmount(() => clearInterval(timer))
   gap: 4px;
   height: 100%;
   padding: 0 10px;
+  flex-shrink: 0;
 }
 
 .xp-ql-btn {
@@ -168,6 +187,63 @@ onBeforeUnmount(() => clearInterval(timer))
   height: 100%;
 }
 
+.xp-taskbuttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  margin-left: 2px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.xp-task-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 48px;
+  max-width: 170px;
+  height: 24px;
+  padding: 0 8px;
+  margin: 2px 0;
+  border: 1px solid #0a3d92;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #3f8edb, #2a6ac3 45%, #245fa0 100%);
+  color: #fff;
+  font-family: var(--xp-font);
+  font-size: 12px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.xp-task-btn > svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.xp-task-btn span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.xp-task-btn:hover {
+  background: linear-gradient(to bottom, #5aa0e8, #3574c9 45%, #2d6ab0 100%);
+}
+
+.xp-task-btn.is-active {
+  background: linear-gradient(to bottom, #1d55b0, #1c4fa3 50%, #163f86 100%);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.xp-task-btn.is-minimized:not(.is-active) {
+  filter: saturate(0.85) brightness(0.95);
+}
+
 .xp-tray {
   margin-left: auto;
   height: 100%;
@@ -179,6 +255,7 @@ onBeforeUnmount(() => clearInterval(timer))
   border-left: 1px solid #0755a8;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   color: #fff;
+  flex-shrink: 0;
 }
 
 .xp-tray-icon {
