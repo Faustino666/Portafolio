@@ -1,0 +1,21 @@
+:root {
+  --xp-blue-top: #3c92f0;
+  --xp-blue-mid: #1747a4;
+  --xp-blue: #245edb;
+  --xp-blue-bottom: #2561d2;
+  --xp-green-top: #389238;
+  --xp-green-mid: #3cb83c;
+  --xp-green-low: #2b9033;
+  --xp-green-bottom: #276f2f;
+  --xp-tray-top: #1387e4;
+  --xp-tray-bottom: #0d55b0;
+  --xp-window: #ece9d8;
+  --xp-window-border: #0c3aa2;
+  --xp-font: 'Trebuchet MS', Tahoma, 'Franklin Gothic Medium', sans-serif;
+}
+
+body {
+  font-family: var(--xp-font);
+  font-size: 11px;
+  overflow: hidden;
+}
