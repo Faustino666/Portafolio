@@ -38,31 +38,6 @@ onBeforeUnmount(() => clearInterval(timer))
 
     <div class="xp-separator" aria-hidden="true" />
 
-    <div class="xp-quicklaunch">
-      <button type="button" class="xp-ql-btn" title="Explorador de Internet" aria-label="Explorador de Internet">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" fill="#E8F1FB" stroke="#3B6EA5" stroke-width="1.5" />
-          <path d="M12 2c-3 3.2-4.2 6.6-4.2 10s1.2 6.8 4.2 10c3-3.2 4.2-6.6 4.2-10S15 5.2 12 2Z" fill="#4A8AD4" />
-          <path d="M2.5 10h19M2.5 14h19" stroke="#3B6EA5" stroke-width="1" />
-        </svg>
-      </button>
-      <button type="button" class="xp-ql-btn" title="Mi PC" aria-label="Mi PC">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="13" rx="1.5" fill="#3A6EA5" stroke="#1B3D6B" />
-          <rect x="5.5" y="5.5" width="13" height="7" fill="#E8F1FB" />
-          <circle cx="10" cy="14.5" r="1.6" fill="#8BC34A" stroke="#4A7A2B" stroke-width="0.5" />
-          <path d="M9 16.5h6" stroke="#1B3D6B" stroke-width="1.2" />
-          <path d="M12 16.5V20M8 20h8" stroke="#1B3D6B" stroke-width="1.2" fill="none" />
-        </svg>
-      </button>
-      <button type="button" class="xp-ql-btn" title="Carpetas" aria-label="Carpetas">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M2.5 5.5h6l2 2.5h11v9.5a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V5.5Z" fill="#FCD54B" stroke="#C9971C" stroke-width="1.3" />
-          <path d="M2.5 8.5h19" stroke="#EAF2FB" stroke-width="1.6" opacity="0.9" />
-        </svg>
-      </button>
-    </div>
-
     <div class="xp-separator" aria-hidden="true" />
 
     <div class="xp-taskbuttons">
@@ -147,38 +122,6 @@ onBeforeUnmount(() => clearInterval(timer))
   margin-left: 6px;
   flex-shrink: 0;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.35));
-}
-
-.xp-quicklaunch {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  height: 100%;
-  padding: 0 10px;
-  flex-shrink: 0;
-}
-
-.xp-ql-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 24px;
-  padding: 2px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.xp-ql-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 3px;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.xp-ql-btn svg {
-  width: 100%;
-  height: 100%;
 }
 
 .xp-taskbuttons {
