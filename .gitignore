@@ -28,10 +28,6 @@ coverage
 
 .eslintcache
 
-# Iconos extraídos (binarios duplicados)
-/Icon/
-/ICON/
-
 # Cypress
 /cypress/videos/
 /cypress/screenshots/
