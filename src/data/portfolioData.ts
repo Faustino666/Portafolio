@@ -142,28 +142,28 @@ export const experience: ExperienceItem[] = [
 
 export const projects: Project[] = [
   {
-    name: '[Nombre del proyecto]',
-    category: '[Web · Móvil · Sistema]',
-    description: 'Descripción breve del proyecto: qué problema resuelve, para quién y cuál fue tu aporte.',
-    stack: ['Vue', 'TypeScript', 'Tailwind CSS'],
-    demo: '',
-    repo: '',
+    name: 'BibliotecaTecNM',
+    category: 'Web · Sistema',
+    description:
+      'Sistema de gestión de biblioteca para el Instituto Tecnológico Superior de Loreto Zacatecas. Aplicación web en PHP + MySQL para administrar el acervo escolar: control de libros, préstamos, usuarios y multas, con panel de administración e inicio de sesión.',
+    stack: ['PHP', 'MySQL'],
+    repo: 'https://github.com/Faustino666/BibliotecaTecNM',
   },
   {
-    name: '[Nombre del segundo proyecto]',
-    category: '[Web · Móvil · Sistema]',
-    description: 'Descripción breve del segundo proyecto destacado.',
-    stack: ['React', 'Node.js', 'MongoDB'],
-    demo: '',
-    repo: '',
+    name: 'Cotizador',
+    category: 'Web',
+    description:
+      'Bocetos y prácticas de un cotizador desarrollado con Vue 3 + Vite.',
+    stack: ['Vue 3', 'Vite', 'JavaScript'],
+    repo: 'https://github.com/Faustino666/Cotizador',
   },
   {
-    name: '[Nombre del tercer proyecto]',
-    category: '[Web · Móvil · Sistema]',
-    description: 'Descripción breve del tercer proyecto destacado.',
-    stack: ['Python', 'FastAPI', 'PostgreSQL'],
-    demo: '',
-    repo: '',
+    name: 'La Máquina del Pecado 3000',
+    category: 'Hardware · IoT',
+    description:
+      'La dispensadora que convierte tu cocina en un antro con luz propia. Proyecto con Arduino Uno, ESP32 y Bluetooth.',
+    stack: ['C++', 'Arduino', 'ESP32', 'Bluetooth'],
+    repo: 'https://github.com/Faustino666/Maquina-del-Pecado-3000',
   },
 ]
 
