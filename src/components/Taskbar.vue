@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import AppIcon from './xp/AppIcon.vue'
+import StartMenu from './StartMenu.vue'
 
 interface TaskbarWindow {
   id: string
@@ -11,14 +12,24 @@ interface TaskbarWindow {
 }
 
 defineProps<{ windows: TaskbarWindow[] }>()
-const emit = defineEmits<{ 'task-click': [id: string] }>()
+const emit = defineEmits<{ 'task-click': [id: string]; 'open-app': [id: string] }>()
 
 const now = ref(new Date())
+const menuOpen = ref(false)
 
 let timer: ReturnType<typeof setInterval> | undefined
 
 function tick() {
   now.value = new Date()
+}
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
+}
+
+function openApp(id: string) {
+  emit('open-app', id)
+  menuOpen.value = false
 }
 
 onMounted(() => {
@@ -31,10 +42,17 @@ onBeforeUnmount(() => clearInterval(timer))
 
 <template>
   <div class="xp-taskbar">
-    <button class="xp-start" type="button">
+    <button
+      class="xp-start"
+      :class="{ 'is-open': menuOpen }"
+      type="button"
+      @click="toggleMenu"
+    >
       <img class="xp-start-logo" src="/icons/windows-xp-logo.png" alt="Windows XP" />
       <span>Inicio</span>
     </button>
+
+    <StartMenu :show="menuOpen" @close="menuOpen = false" @open-app="openApp" />
 
     <div class="xp-separator" aria-hidden="true" />
 
@@ -46,7 +64,7 @@ onBeforeUnmount(() => clearInterval(timer))
         class="xp-task-btn"
         :class="{ 'is-active': win.active, 'is-minimized': win.minimized }"
         :title="win.title"
-        @click="emit('task-click', win.id)"
+        @click="emit('task-click', win.id); menuOpen = false"
       >
         <AppIcon :name="win.icon" />
         <span>{{ win.title }}</span>
@@ -104,8 +122,10 @@ onBeforeUnmount(() => clearInterval(timer))
   background: linear-gradient(to bottom, #3da43d, #45c545 30%, #31a137 60%, #2b7a34 100%);
 }
 
-.xp-start:active {
+.xp-start:active,
+.xp-start.is-open {
   background: linear-gradient(to bottom, #276f2f, #2b9033 40%, #3cb83c 70%, #389238 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .xp-start-logo {

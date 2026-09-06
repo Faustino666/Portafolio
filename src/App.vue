@@ -266,7 +266,7 @@ function onDesktopMouseUp() {
       </template>
     </div>
 
-    <Taskbar :windows="taskbarWindows" @task-click="taskClick" />
+    <Taskbar :windows="taskbarWindows" @task-click="taskClick" @open-app="(id: string) => open(id as AppId)" />
   </div>
 </template>
 
