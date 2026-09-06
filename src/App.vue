@@ -151,7 +151,7 @@ onMounted(() => open('about'))
       />
     </div>
 
-    <div class="absolute inset-0 z-10">
+    <div class="pointer-events-none absolute inset-0 z-10">
       <template v-for="win in instances" :key="win.id">
         <XpWindow
           v-model:minimized="win.minimized"

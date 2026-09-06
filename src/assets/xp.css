@@ -45,6 +45,7 @@ body {
 
 .xp-window {
   position: fixed;
+  pointer-events: auto;
   background: var(--xp-window);
   border: 1px solid var(--xp-window-border);
   border-radius: 8px 8px 3px 3px;
