@@ -32,13 +32,7 @@ onBeforeUnmount(() => clearInterval(timer))
 <template>
   <div class="xp-taskbar">
     <button class="xp-start" type="button">
-      <svg class="xp-start-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M2 5c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V5Z" fill="#8FD14F" />
-        <path d="M2 9c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V9Z" fill="#52BE38" />
-        <path d="M2 13c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V13Z" fill="#52BE38" />
-        <path d="M2 17c4.5 0 4.5-1 8.5-1 3.5 0 4 1 8 1 .8 0 1.5-.2 2-.5v1.6c0 .6-.8 1-1.8 1H20c-4.5 0-4.5 1-8.5 1-3.5 0-4-1-8.5-1-1 0-1.8.4-2 .6V17Z" fill="#52BE38" />
-        <circle cx="6.5" cy="6.5" r="2.5" fill="#F7D117" />
-      </svg>
+      <img class="xp-start-logo" src="/icons/windows-xp-logo.png" alt="Windows XP" />
       <span>Inicio</span>
     </button>
 
