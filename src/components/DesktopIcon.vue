@@ -19,10 +19,31 @@ const selected = ref(false)
     <span class="xp-icon-wrap">
       <AppIcon :name="icon" class="xp-desktop-icon-img" />
       <span class="xp-shortcut" aria-hidden="true" title="Acceso directo">
-        <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="10" height="10" rx="1" fill="#1D5BBA" />
-          <path d="M7.6 3.6 3.6 7.6l.8.8 4-4" fill="none" stroke="#fff" stroke-width="1.5" />
-          <path d="M5 4h3v3" fill="none" stroke="#fff" stroke-width="1.5" />
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M16 3 L9.5 10.2 M16 3 L22.5 10.2
+                 M16 10.2
+                 C16 13.5 15.6 17 13.6 19.8
+                 C11.6 22.6 8.6 23.8 6 22.4
+                 C3.4 21 3.8 18.4 6.6 18.4
+                 C8 18.4 9.4 19.2 9.8 20.8
+                 C10.2 22.4 9.2 23.8 7.8 23.6"
+              stroke="#000"
+              stroke-width="3.2"
+            />
+            <path
+              d="M16 3 L9.5 10.2 M16 3 L22.5 10.2
+                 M16 10.2
+                 C16 13.5 15.6 17 13.6 19.8
+                 C11.6 22.6 8.6 23.8 6 22.4
+                 C3.4 21 3.8 18.4 6.6 18.4
+                 C8 18.4 9.4 19.2 9.8 20.8
+                 C10.2 22.4 9.2 23.8 7.8 23.6"
+              stroke="#fff"
+              stroke-width="1.5"
+            />
+          </g>
         </svg>
       </span>
     </span>
