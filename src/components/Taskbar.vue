@@ -219,7 +219,7 @@ onBeforeUnmount(() => clearInterval(timer))
   flex-shrink: 0;
 }
 
-.xp-task-btn > svg {
+.xp-task-btn > .xp-appicon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;

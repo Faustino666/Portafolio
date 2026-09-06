@@ -19,31 +19,29 @@ const selected = ref(false)
     <span class="xp-icon-wrap">
       <AppIcon :name="icon" class="xp-desktop-icon-img" />
       <span class="xp-shortcut" aria-hidden="true" title="Acceso directo">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M16 3 L9.5 10.2 M16 3 L22.5 10.2
-                 M16 10.2
-                 C16 13.5 15.6 17 13.6 19.8
-                 C11.6 22.6 8.6 23.8 6 22.4
-                 C3.4 21 3.8 18.4 6.6 18.4
-                 C8 18.4 9.4 19.2 9.8 20.8
-                 C10.2 22.4 9.2 23.8 7.8 23.6"
-              stroke="#000"
-              stroke-width="3.2"
-            />
-            <path
-              d="M16 3 L9.5 10.2 M16 3 L22.5 10.2
-                 M16 10.2
-                 C16 13.5 15.6 17 13.6 19.8
-                 C11.6 22.6 8.6 23.8 6 22.4
-                 C3.4 21 3.8 18.4 6.6 18.4
-                 C8 18.4 9.4 19.2 9.8 20.8
-                 C10.2 22.4 9.2 23.8 7.8 23.6"
-              stroke="#fff"
-              stroke-width="1.5"
-            />
-          </g>
+        <svg viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="#7e7b98"
+            d="M0 0h11v1H0zM0 0v11h1V0z"
+          />
+          <path
+            fill="#000015"
+            d="M10 0v11h1V0zM0 10h11v1H0z"
+          />
+          <path
+            fill="#fcffff"
+            d="M1 1h9v9H1z"
+          />
+          <path
+            fill="#070604"
+            d="M4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1z
+               M5 3h1v1h-1zM6 3h1v1h-1zM7 3h1v1h-1z
+               M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1z
+               M3 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM7 5h1v1h-1z
+               M3 6h1v1h-1zM4 6h1v1h-1z
+               M3 7h1v1h-1z
+               M4 8h1v1h-1z"
+          />
         </svg>
       </span>
     </span>
@@ -72,6 +70,8 @@ const selected = ref(false)
 
 .xp-icon-wrap {
   position: relative;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
 }
@@ -84,16 +84,15 @@ const selected = ref(false)
 
 .xp-shortcut {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 13px;
-  height: 13px;
+  left: -3px;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
 }
 
 .xp-shortcut svg {
-  width: 13px;
-  height: 13px;
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+  width: 12px;
+  height: 12px;
 }
 
 .xp-desktop-icon:hover .xp-desktop-icon-img {
